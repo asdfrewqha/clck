@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 import random
 import json
 
@@ -39,6 +39,11 @@ def coun(count):
         butt = f'<a href="{url}" target="_blank">\n<button id="button"> {url} </button>\n</a>\n <br> \n'
         allbuttons += butt
     return render_template('index.html', buttons=allbuttons)
+
+@app.route("/css/<filename>")
+def uploaded_css(filename):
+    return send_from_directory("css", filename)
+    
 
 if __name__ == "__main__":
     app.run(debug=True)
