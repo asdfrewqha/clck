@@ -1,0 +1,15 @@
+a {
+    color: #fff;
+    background: #000;
+    padding: 1.2rem 2rem;
+    cursor: not-allowed;
+    user-select: none;
+    border: none;
+    outline: none;
+    transition: background 9999999s;
+  }
+  
+a:active {
+    background: red;
+    transition: background 0s;
+  }
