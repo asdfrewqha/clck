@@ -5,7 +5,15 @@
         <title> Clck randomizer </title>
     </head>
     <body>
-        <input>
-        <a href = window.location.href+> </a>
+    	<input type="number" id = "inputCount" placeholder="Введите требуемое количество ссылок">
+        <input type="submit" id = "Generate">
     </body>
+    <script>
+        const Generate = document.getElementById("Generate");
+        const inputCount = document.getElementById("inputCount");
+		Generate.addEventListener("click", function(){
+			let url = inputCount.value;
+			window.open(window.location.href + "/gen/" + url, "_blank")
+		});
+    </script>
 </html>

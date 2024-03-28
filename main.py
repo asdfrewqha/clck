@@ -25,18 +25,18 @@ def generate_id():
         return id
         
 
-'''@app.route('/')
+@app.route('/')
 def main():
-    pass;
-'''
+    return render_template('main.html')
 
-@app.route('/<count>')
+
+@app.route('/gen/<count>')
 def coun(count):
     count = int(count)
     allbuttons = ''
     for x in range(count):
         url = "https://clck.ru/" + generate_id()
-        butt = f'<a href="{url}" target="_blank">\n<button, name="button"> {url} </button>\n</a>\n <br> \n'
+        butt = f'<a href="{url}" target="_blank">\n<button id="button"> {url} </button>\n</a>\n <br> \n'
         allbuttons += butt
     return render_template('index.html', buttons=allbuttons)
 
